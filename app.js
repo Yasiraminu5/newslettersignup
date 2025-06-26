@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require ("express");
 const bodyParser = require("body-parser");
 const request = require ("request");
 const https = require("https");
@@ -35,12 +35,12 @@ app.post("/", function(req, res) {
     const jsonData = JSON.stringify(data);
      
     const url = `https://${process.env.MAILCHIMP_SERVER_PREFIX}.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_AUDIENCE_ID}`;
-    //const url = "https://us6.api.mailchimp.com/3.0/lists/c3ed7588a7";
+   
 
     const Options = {
        method: "POST" ,
        auth: `abuali:${process.env.MAILCHIMP_API_KEY}`,
-       //auth: "Abuali01:e5a9ff2314769d82d152613fef346f94-us6"   
+         
     }
 
     const request = https.request(url, Options, function(response) {
